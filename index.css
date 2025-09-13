@@ -1,0 +1,95 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+*/
+
+body {
+  background-color: #f8fafc; /* background from tailwind config */
+  color: #1e293b; /* onBackground from tailwind config */
+}
+
+/* Animation for gentle fade-in of components */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+/* Animation for the main canvas image to zoom into focus */
+@keyframes zoom-in {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.animate-zoom-in {
+  animation: zoom-in 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Animation for the wardrobe sheet to slide up from the bottom */
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.animate-slide-up {
+  animation: slide-up 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Animation for highlighting a successful action, like adding a garment */
+@keyframes success-pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(34, 197, 94, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0 12px rgba(34, 197, 94, 0);
+  }
+}
+
+.animate-success-pulse {
+  animation: success-pulse 1.5s ease-out forwards;
+}
+
+/* Utility to hide scrollbars */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Custom scrollbar for a more integrated look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e2e8f0; /* surfaceVariant */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1; /* outline */
+}
